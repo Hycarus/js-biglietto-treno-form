@@ -6,7 +6,7 @@ const resetBtn = document.querySelector('.btn-danger');
 
 resetBtn.addEventListener('click', function(){
     const name = document.getElementById('name').value = '';
-    const lastName = document.getElementById('last-name').value;
+    const lastName = document.getElementById('last-name').value = '';
     const km = document.getElementById('km').value = '';
     const age = document.getElementById('age').value = '';
     const ticket = document.getElementById('ticket');
