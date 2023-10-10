@@ -1,8 +1,8 @@
-const button = document.querySelector('.btn-success');
-console.log(button);
+let button = document.querySelector('.btn-success');
 const price = 0.21;
 let finalPrice = document.getElementById('prezzo');
 const resetBtn = document.querySelector('.btn-danger');
+
 
 resetBtn.addEventListener('click', function(){
     const name = document.getElementById('name').value = '';
@@ -29,14 +29,39 @@ button.addEventListener('click', function(){
         console.log(ticketContainer);
         console.log(box);
         ticketContainer.innerHTML = `
-        <h3 class="text-uppercase">nome passeggero
-        </h3>
+        <h4 class="text-uppercase mb-4">nome passeggero
+        </h4>
         ${name}
         `;
+
+        button = document.getElementById('carrozza')
         ticket.classList.remove('d-none');
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min) ) + min;
+        }
+        button.innerHTML = `
+        <h4 class="mb-4">Carrozza
+        </h4>
+        ${getRndInteger(1,11)}
+        `;
+        console.log(button);
+
+        button = document.getElementById('codice-cp')
+        ticket.classList.remove('d-none');
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min) ) + min;
+        }
+        button.innerHTML = `
+        <h4 class="mb-4">Codice CP
+        </h4>
+        ${getRndInteger(10000,100000)}
+        `;
+        console.log(button);
+
         if(isNaN(km)){
             alert('Inserisci valori validi');
         }
+
         let totalPrice = (price * km);
         totalPrice = totalPrice.toFixed(2);
         if(age === 'over65'){
@@ -47,7 +72,9 @@ button.addEventListener('click', function(){
             finalPrice.innerHTML = totalPrice + '\u20AC';
         }
         finalPrice.innerHTML = `
+        <h4 class="mb-4">Costo del biglietto</h4>
         ${totalPrice} \u20AC
         `
+        console.log(finalPrice);
     }
 })
