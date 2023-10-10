@@ -28,7 +28,39 @@
   <body>
 
     <main>
-
+        <h1 class="text-uppercase text-center mt-3">
+            calcola il prezzo del tuo biglietto
+        </h1>
+        <div class="container w-50 border mt-5">
+            <div class="my-3">
+                <label for="name" class="form-label">
+                    Nome e Cognome
+                </label>
+                <input type="text" class="form-control" id="name" placeholder="" value="" name="name">
+            </div>
+            <div class="my-3">
+                <label for="km" class="form-label">Km da percorrere</label>
+                <input type="text" class="form-control" id="km" placeholder="" value="" name="km">
+            </div>
+            <div class="mb-3">
+                <label for="age" class="form-label">
+                    Fascia d'et&agrave;
+                </label>
+                <select name="age" id="age">
+                    <option value="">Seleziona</option>
+                    <option value="maggiorenne">
+                        Maggiorenne
+                    </option>
+                    <option value="over65">
+                        Over 65
+                    </option>
+                    <option value="minorenne">
+                        Minorenne
+                    </option>
+                </select>
+            </div>
+            
+        </div>
     </main>
 
 
