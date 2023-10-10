@@ -4,6 +4,14 @@ const price = 0.21;
 let finalPrice = document.getElementById('prezzo');
 const resetBtn = document.querySelector('.btn-danger');
 
+resetBtn.addEventListener('click', function(){
+    const name = document.getElementById('name').value = '';
+    const km = document.getElementById('km').value = '';
+    const age = document.getElementById('age').value = '';
+    const ticket = document.getElementById('ticket');
+    ticket.classList.toggle('d-none');
+})
+
 button.addEventListener('click', function(){
     const name = document.getElementById('name').value;
     const km = document.getElementById('km').value;
