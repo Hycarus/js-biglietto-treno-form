@@ -6,6 +6,7 @@ const resetBtn = document.querySelector('.btn-danger');
 
 resetBtn.addEventListener('click', function(){
     const name = document.getElementById('name').value = '';
+    const lastName = document.getElementById('last-name').value;
     const km = document.getElementById('km').value = '';
     const age = document.getElementById('age').value = '';
     const ticket = document.getElementById('ticket');
@@ -14,11 +15,13 @@ resetBtn.addEventListener('click', function(){
 
 button.addEventListener('click', function(){
     const name = document.getElementById('name').value;
+    const lastName = document.getElementById('last-name').value;
     const km = document.getElementById('km').value;
     const age = document.getElementById('age').value;
     if(name === '' || km === '' || age === ''){
         alert('Devi inserire dei valori validi!')
     } else{
+        console.log(lastName);
         console.log(name);
         console.log(km);
         console.log(age);
@@ -31,7 +34,7 @@ button.addEventListener('click', function(){
         ticketContainer.innerHTML = `
         <h4 class="text-uppercase mb-4">nome passeggero
         </h4>
-        <h2>${name}</h2>
+        <h2>${name} ${lastName}</h2>
         `;
 
         button = document.getElementById('carrozza')
