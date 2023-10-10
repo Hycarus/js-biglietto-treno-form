@@ -1,7 +1,7 @@
 const button = document.querySelector('.btn-success');
 console.log(button);
 const price = 0.21;
-let finalPrice = document.getElementById
+let finalPrice = document.getElementById('prezzo');
 const resetBtn = document.querySelector('.btn-danger');
 
 button.addEventListener('click', function(){
@@ -26,5 +26,20 @@ button.addEventListener('click', function(){
         ${name}
         `;
         ticket.classList.remove('d-none');
+        if(isNaN(km)){
+            alert('Inserisci valori validi');
+        }
+        let totalPrice = (price * km);
+        totalPrice = totalPrice.toFixed(2);
+        if(age === 'over65'){
+            totalPrice = (totalPrice - (totalPrice * 40 / 100)).toFixed(2);
+            finalPrice.innerHTML = totalPrice + '\u20AC';
+        } else if(age === 'minorenne'){
+            totalPrice = (totalPrice - (totalPrice * 20 / 100)).toFixed(2);
+            finalPrice.innerHTML = totalPrice + '\u20AC';
+        }
+        finalPrice.innerHTML = `
+        ${totalPrice} \u20AC
+        `
     }
 })
