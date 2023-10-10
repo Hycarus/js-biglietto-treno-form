@@ -85,12 +85,13 @@ button.addEventListener('click', function(){
             </h6>
             ${offerReduct}
             `;
-        }
-        offerta.innerHTML = `
+        } else if(age === 'maggiorenne'){
+            offerta.innerHTML = `
             <h6 class="mb-4 pt-3">Offerta
             </h6>
             ${offerStandard}
             `
+        }
         finalPrice.innerHTML = `
         <h6 class="mb-4 pt-3">Costo del biglietto</h6>
         ${totalPrice} \u20AC
