@@ -31,7 +31,7 @@ button.addEventListener('click', function(){
         ticketContainer.innerHTML = `
         <h4 class="text-uppercase mb-4">nome passeggero
         </h4>
-        ${name}
+        <h2>${name}</h2>
         `;
 
         button = document.getElementById('carrozza')
@@ -40,8 +40,8 @@ button.addEventListener('click', function(){
             return Math.floor(Math.random() * (max - min) ) + min;
         }
         button.innerHTML = `
-        <h4 class="mb-4">Carrozza
-        </h4>
+        <h6 class="mb-4 pt-3">Carrozza
+        </h6>
         ${getRndInteger(1,11)}
         `;
         console.log(button);
@@ -52,27 +52,44 @@ button.addEventListener('click', function(){
             return Math.floor(Math.random() * (max - min) ) + min;
         }
         button.innerHTML = `
-        <h4 class="mb-4">Codice CP
-        </h4>
+        <h6 class="mb-4 pt-3">Codice CP
+        </h6>
         ${getRndInteger(10000,100000)}
         `;
         console.log(button);
 
         if(isNaN(km)){
             alert('Inserisci valori validi');
-        }
-
+        } 
         let totalPrice = (price * km);
         totalPrice = totalPrice.toFixed(2);
+        let offerta = document.getElementById('offerta');
+        const offerReduct = 'Biglietto ridotto';
+        const offerStandard = 'Biglietto standard';
         if(age === 'over65'){
             totalPrice = (totalPrice - (totalPrice * 40 / 100)).toFixed(2);
             finalPrice.innerHTML = totalPrice + '\u20AC';
+            offerta.innerHTML = `
+            <h6 class="mb-4 pt-3">Offerta
+            </h6>
+            ${offerReduct}
+            `;
         } else if(age === 'minorenne'){
             totalPrice = (totalPrice - (totalPrice * 20 / 100)).toFixed(2);
             finalPrice.innerHTML = totalPrice + '\u20AC';
+            offerta.innerHTML = `
+            <h6 class="mb-4 pt-3">Offerta
+            </h6>
+            ${offerReduct}
+            `;
         }
+        offerta.innerHTML = `
+            <h6 class="mb-4 pt-3">Offerta
+            </h6>
+            ${offerStandard}
+            `
         finalPrice.innerHTML = `
-        <h4 class="mb-4">Costo del biglietto</h4>
+        <h6 class="mb-4 pt-3">Costo del biglietto</h6>
         ${totalPrice} \u20AC
         `
         console.log(finalPrice);
