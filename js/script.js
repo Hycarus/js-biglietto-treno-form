@@ -18,7 +18,7 @@ button.addEventListener('click', function(){
     const lastName = document.getElementById('last-name').value;
     const km = document.getElementById('km').value;
     const age = document.getElementById('age').value;
-    if(name === '' || km === '' || age === ''){
+    if(name === '' || lastName === '' || km === '' || age === ''){
         alert('Devi inserire dei valori validi!')
     } else{
         console.log(lastName);
