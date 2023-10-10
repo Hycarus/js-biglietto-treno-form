@@ -10,7 +10,7 @@ resetBtn.addEventListener('click', function(){
     const km = document.getElementById('km').value = '';
     const age = document.getElementById('age').value = '';
     const ticket = document.getElementById('ticket');
-    ticket.classList.toggle('d-none');
+    ticket.classList.add('d-none');
 })
 
 button.addEventListener('click', function(){
